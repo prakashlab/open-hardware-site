@@ -10,7 +10,8 @@
     "clean": "gatsby clean",
     "dev": "gatsby clean && gatsby develop",
     "preview": "gatsby build && gatsby serve",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "forestry:preview": "gatsby develop -p 8080 -H 0.0.0.0"
   },
   "dependencies": {
     "@reflexjs/components": "^0.1.7",
