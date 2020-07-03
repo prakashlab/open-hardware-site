@@ -38,10 +38,6 @@ sections:
   create: all
   match: "**/*"
   new_doc_ext: mdx
-- type: document
-  path: gatsby-config.js
-  label: Gatsby Config
-  match: "**/*"
 upload_dir: static/uploads
 public_path: "/static/uploads"
 front_matter_path: ''
