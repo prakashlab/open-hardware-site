@@ -12,8 +12,15 @@
     "preview": "gatsby build && gatsby serve"
   },
   "dependencies": {
+    "@reflexjs/components": "^0.1.7",
     "@reflexjs/gatsby-theme-base": "^0.1.9",
-    "gatsby": "^2.22.11",
+    "@reflexjs/gatsby-theme-doc": "^0.1.9",
+    "@reflexjs/gatsby-theme-post": "^0.2.0",
+    "@reflexjs/gatsby-theme-styleguide": "^0.1.9",
+    "@reflexjs/preset-base": "^0.2.0",
+    "@reflexjs/preset-flex": "^0.1.5",
+    "core-js": "^2.6.11",
+    "gatsby": "2.23.14",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   }

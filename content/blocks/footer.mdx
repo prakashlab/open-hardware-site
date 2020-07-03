@@ -1,0 +1,56 @@
+import { useSiteMetadata } from "@reflexjs/gatsby-theme-core"
+
+export const FooterBlock = () => {
+  const { title } = useSiteMetadata()
+  return (
+    <Section py={[8, 10, 12]}>
+      <Container>
+        <Flexbox
+          flexDirection={["column", "row"]}
+          alignItems={["flex-start", "center"]}
+          justifyContent="space-between"
+        >
+          <Div maxW="300px">
+            <H2 m="0" fontSize="xl|2xl|3xl">
+              {title}
+            </H2>
+            <P fontSize="md">
+              Perspiciatis doloribus dignissimos delectus exercitationem ipsum
+              voluptates.
+            </P>
+            <A href="#" fontSize="md" color="text" lineHeight="none">
+              <Icon name="mail" size="5" mr="2" />
+              support@reflexjs.org
+            </A>
+          </Div>
+          <NavMenu
+            name="footer"
+            dropdown={false}
+            my="6|0"
+            gap="4|10|18"
+          />
+        </Flexbox>
+        <Flexbox
+          borderTopWidth={1}
+          justifyContent="space-between"
+          pt={[4, 5, 6]}
+          mt={[4, 5, 6]}
+        >
+          <P fontSize="sm" my="0">
+            © {new Date().getFullYear()} {title}
+          </P>
+          <Grid col="2" gap="4" mt={[4, 0]}>
+            <A href="#" color="text">
+              <Icon name="twitter" size={5} />
+              <VisuallyHidden>Follow on Twitter</VisuallyHidden>
+            </A>
+            <A href="#" color="text">
+              <Icon name="instagram" size={5} />
+              <VisuallyHidden>Follow on Instagram</VisuallyHidden>
+            </A>
+          </Grid>
+        </Flexbox>
+      </Container>
+    </Section>
+  )
+}
