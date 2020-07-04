@@ -88,9 +88,9 @@ export const HeaderBlock = ({ ...props }) => {
 export const Branding = () => {
   const { title } = useSiteMetadata()
   return (
-    <A href="/" fontSize="3xl" fontWeight="semibold" color="text">
+    <Link href="/" fontSize="3xl" fontWeight="semibold" color="text">
       {title}
-    </A>
+    </Link>
   )
 }
 
