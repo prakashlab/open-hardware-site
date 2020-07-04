@@ -12,11 +12,9 @@ export const Layout = ({
   <React.Fragment>
     <MDXProvider>
       {header && <Block src={header} />}
-      <Section py="8|12|16|24">
-        <Container>
+      <Container>
           {children}
-        </Container>
-      </Section>
+      </Container>
       {footer && <Block src={footer} />}
     </MDXProvider>
   </React.Fragment>
