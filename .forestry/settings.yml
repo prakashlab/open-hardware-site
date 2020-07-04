@@ -1,0 +1,52 @@
+---
+new_page_extension: md
+auto_deploy: false
+admin_path: "/static/admin"
+webhook_url: 
+sections:
+- type: heading
+  label: Content
+- type: directory
+  path: content/pages
+  label: Pages
+  create: all
+  match: "**/*"
+  new_doc_ext: mdx
+- type: directory
+  path: content/docs
+  label: Docs
+  create: all
+  match: "**/*"
+  new_doc_ext: mdx
+- type: directory
+  path: content/posts
+  label: Posts
+  create: all
+  match: "**/*"
+  new_doc_ext: mdx
+- type: heading
+  label: Dev
+- type: directory
+  path: content/navs
+  label: Navs
+  create: all
+  match: "**/*"
+  new_doc_ext: mdx
+- type: directory
+  path: content/blocks
+  label: Blocks
+  create: all
+  match: "**/*"
+  new_doc_ext: mdx
+upload_dir: static/uploads
+public_path: "/static/uploads"
+front_matter_path: ''
+use_front_matter_path: false
+file_template: ":year:/:month:/:day:/:filename:"
+build:
+  preview_output_directory: public
+  install_dependencies_command: yarn install
+  preview_docker_image: forestryio/node:12
+  mount_path: "/srv"
+  working_dir: "/srv"
+  instant_preview_command: yarn forestry:preview
