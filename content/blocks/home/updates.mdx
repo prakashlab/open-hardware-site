@@ -1,0 +1,37 @@
+import { usePost } from "@reflexjs/gatsby-theme-post";
+
+export const RecentUpdates = ({ ...props }) => {
+  const posts = usePost().slice(0, 3);
+  return (
+    <Section py="8|12|16|24" {...props}>
+      <Container>
+        <H2>Recent Updates</H2>
+        {posts.map((post) => (
+          <Article key={post.id} mb="10">
+            <Grid col="200px 1fr" gap="8">
+              {post.image && (
+                <Link href={post.slug} d="block">
+                  <Image src={post.image} aspectRatio={3 / 2} />
+                </Link>
+              )}
+              <Div>
+                {post.title && (
+                  <Link href={post.slug}>
+                    <H3 my="0" hoverColor="primary">
+                      {post.title}
+                    </H3>
+                  </Link>
+                )}
+                {post.date && <P>{post.date}</P>}
+                {post.excerpt && <P>{post.excerpt}</P>}
+              </Div>
+            </Grid>
+          </Article>
+        ))}
+        <ButtonLink to="updates" variant="primary lg">
+          More updates <Icon name="arrow-right" ml="2" />
+        </ButtonLink>
+      </Container>
+    </Section>
+  );
+}

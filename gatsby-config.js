@@ -10,7 +10,13 @@ module.exports = {
   plugins: [
     `@reflexjs/gatsby-theme-base`,
     `@reflexjs/gatsby-theme-doc`,
-    `@reflexjs/gatsby-theme-post`,
+    {
+      resolve: `@reflexjs/gatsby-theme-post`,
+      options: {
+        basePath: "/updates",
+        postsPerPage: 8
+      }
+    },
     `@reflexjs/gatsby-theme-styleguide`,
   ],
 }
