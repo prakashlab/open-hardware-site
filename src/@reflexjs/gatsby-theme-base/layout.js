@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Container, Section } from "@reflexjs/components"
+import { Container } from "@reflexjs/components"
 import { MDXProvider } from "@reflexjs/gatsby-theme-core"
 import { Block } from "@reflexjs/gatsby-theme-block"
 
