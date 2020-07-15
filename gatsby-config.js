@@ -11,6 +11,16 @@ module.exports = {
     `@reflexjs/gatsby-theme-base`,
     `@reflexjs/gatsby-theme-doc`,
     {
+      resolve: `@reflexjs/gatsby-plugin-metatags`,
+      options: {
+        types: [
+          `Page`,
+          `Post`
+        ],
+        debug: false
+      }
+    },
+    {
       resolve: `@reflexjs/gatsby-theme-post`,
       options: {
         basePath: "/updates",
