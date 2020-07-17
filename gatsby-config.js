@@ -28,5 +28,28 @@ module.exports = {
       }
     },
     `@reflexjs/gatsby-theme-styleguide`,
+    {
+      resolve: `gatsby-source-notionso`,
+      options: {
+        name: 'Doc',
+        rootPageUrl: 'https://www.notion.so/Open-Hardware-Site-Notion-Docs-df9ac3ecdd14491d91253aaa0adadbce',
+        debug: false
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `${__dirname}/content/data`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/pages`
+      }
+    },
+    `gatsby-plugin-react-helmet`
   ],
 }
