@@ -6,7 +6,7 @@ import { Container } from "@reflexjs/components"
 import { Block } from "@reflexjs/gatsby-theme-block"
 import notionRendererFactory from 'gatsby-source-notionso/lib/renderer';
 import NotionBlockRenderer from '../components/notionBlockRenderer';
-import { Helmet } from "react-helmet"
+import { Metatags } from "@reflexjs/gatsby-plugin-metatags"
 
 const Template = ({ data, pageContext }) => {
   const notionRenderer = notionRendererFactory({
@@ -14,9 +14,7 @@ const Template = ({ data, pageContext }) => {
   });
   return (
   <React.Fragment>
-    <Helmet>
-      <title>{data.notionPageDoc.title} | {data.site.siteMetadata.title}</title>
-    </Helmet>
+    <Metatags pathname="/notion/${notionPageDoc.slug}" />
     <Block src="header" />
     <Container>
       <NotionBlockRenderer

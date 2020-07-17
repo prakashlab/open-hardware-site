@@ -2,13 +2,11 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import { A, Article, Container, H1, H2, P } from "@reflexjs/components"
 import { Block } from "@reflexjs/gatsby-theme-block"
-import { Helmet } from "react-helmet"
+import { Metatags } from "@reflexjs/gatsby-plugin-metatags"
 
 const IndexPage = ({ data }) => (
   <React.Fragment>
-    <Helmet>
-      <title>Notion Documentation | {data.site.siteMetadata.title}</title>
-    </Helmet>
+    <Metatags pathname="/notion" />
     <Block src="header" />
     <Container>
       <H1>Notion Documentation</H1>
