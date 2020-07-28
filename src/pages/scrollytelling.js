@@ -10,9 +10,7 @@ const ScrollyPage = ({ data }) => (
   <React.Fragment>
     <Metatags pathname="/notion" />
     <Block src="header" />
-    <Container>
-      <LoadableScrollytelling />
-    </Container>
+    <LoadableScrollytelling />
     <Block src="footer" />
   </React.Fragment>
 )
