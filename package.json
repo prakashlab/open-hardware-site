@@ -14,6 +14,7 @@
     "forestry:preview": "gatsby develop -p 8080 -H 0.0.0.0"
   },
   "dependencies": {
+    "@loadable/component": "^5.13.1",
     "@reflexjs/components": "^0.1.8",
     "@reflexjs/gatsby-theme-base": "^0.3.0",
     "@reflexjs/gatsby-theme-block": "^0.3.0",
@@ -27,7 +28,9 @@
     "gatsby-source-notionso": "^1.1.6",
     "gh-pages": "^3.1.0",
     "highlight.js": "9.17.1",
+    "intersection-observer": "^0.11.0",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "scrollama": "^2.2.1"
   }
 }
