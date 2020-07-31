@@ -1,5 +1,4 @@
 import * as React from "react"
-import { Container } from "@reflexjs/components"
 import { Block } from "@reflexjs/gatsby-theme-block"
 import { Metatags } from "@reflexjs/gatsby-plugin-metatags"
 import Loadable from "@loadable/component"

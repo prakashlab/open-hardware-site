@@ -1,54 +1,109 @@
 import React, { PureComponent } from "react";
+import { Container, Div, Grid, H1, P } from "@reflexjs/components"
+import { Block } from "@reflexjs/gatsby-theme-block"
+import { Image } from "@reflexjs/gatsby-plugin-image";
 import styles from "./scrollytelling.module.css";
-
-import background1 from "../../content/images/scrollytelling/1.jpg"
-import background2 from "../../content/images/scrollytelling/2.jpg"
-import background3 from "../../content/images/scrollytelling/3.jpg"
-import background4 from "../../content/images/scrollytelling/4.jpg"
-import background5 from "../../content/images/scrollytelling/5.jpg"
-import background6 from "../../content/images/scrollytelling/6.jpg"
-import background7 from "../../content/images/scrollytelling/7.jpg"
-import background8 from "../../content/images/scrollytelling/8.jpg"
 
 const content = {
   0: {
-    text: 'This is the first box!',
-    background: background1,
+    child: (
+      <Container px="3rem" py="3rem" bg="background">
+        <H1>First</H1>
+        <P>This is the first box!</P>
+        <Image src="default.jpg" />
+      </Container>
+    ),
+    background: "1.jpg",
+    alt: "A parrot"
   },
   1: {
-    text: 'This is the second box!',
-    background: background2,
+    child: (
+      <Container px="0" py="0">
+        <Grid col="1|1|2">
+          <Div px="3rem" py="3rem" bg="background">
+            <H1>Second</H1>
+            <P>Left Column!</P>
+          </Div>
+        </Grid>
+      </Container>
+    ),
+    background: "2.jpg",
+    alt: "A leopard"
   },
   2: {
-    text: 'This is the third box!',
-    background: background3
+    child: (
+      <Container px="0" py="0">
+        <Grid col="1|1|2">
+          <Div></Div>
+          <Div px="3rem" py="3rem" bg="background">
+            <H1>Third</H1>
+            <P>Right Column!</P>
+          </Div>
+        </Grid>
+      </Container>
+    ),
+    background: "3.jpg",
+    alt: "Some sheep"
   },
   3: {
-    text: 'This is the fourth box!',
-    background: background4
+    child: (
+      <Container px="3rem" py="3rem" bg="background">
+        <H1>Fourth</H1>
+        <Block
+          src="video-card"
+          url="https://www.youtube-nocookie.com/embed/j0Eozd0CB1I"
+        />
+      </Container>
+    ),
+    background: "4.jpg",
+    alt: "Some horses"
   },
   4: {
-    text: 'This is the fifth box!',
-    background: background5
+    child: (
+      <Container px="3rem" py="3rem" bg="background">
+        <H1>Fifth</H1>
+        <P>This is the fifth box!</P>
+      </Container>
+    ),
+    background: "5.jpg",
+    alt: "Some zebras"
   },
   5: {
-    text: 'This is the sixth box!',
-    background: background6
+    child: (
+      <Container px="3rem" py="3rem" bg="background">
+        <H1>Sixth</H1>
+        <P>This is the sixth box!</P>
+      </Container>
+    ),
+    background: "6.jpg",
+    alt: "A giraffe"
   },
   6: {
-    text: 'This is the seventh box!',
-    background: background7
+    child: (
+      <Container px="3rem" py="3rem" bg="background">
+        <H1>Seventh</H1>
+        <P>This is the seventh box!</P>
+      </Container>
+    ),
+    background: "7.jpg",
+    alt: "A fox"
   },
   7: {
-    text: 'This is the eighth box!',
-    background: background8
+    child: (
+      <Container px="3rem" py="3rem" bg="background">
+        <H1>Eighth</H1>
+        <P>This is the eighth box!</P>
+      </Container>
+    ),
+    background: "8.jpg",
+    alt: "A fox"
   },
 }
 
 export default class Scrollytelling extends PureComponent {
   state = {
     data: 0,
-    steps: [0, 1, 2, 3, 4, 5, 6, 7],
+    steps: Object.keys(content)
   };
 
   componentDidMount() {
@@ -57,7 +112,7 @@ export default class Scrollytelling extends PureComponent {
     const scroller = scrollama();
     scroller.setup({
       step: '.' + styles.step,
-      offset: 0.4,
+      offset: 0.5,
       // debug: true
     });
     scroller.onStepEnter(this.onStepEnter);
@@ -77,32 +132,28 @@ export default class Scrollytelling extends PureComponent {
   };
 
   render() {
-    const { data, steps, /*progress*/ } = this.state;
+    const { data, steps } = this.state;
 
-    const backgroundImage = data === undefined
-      ?  content[0].background : content[data].background;
+    const active = data === undefined ? content[0] : content[data];
     return (
-      <div>
-        <p className={styles.pageSubtitle}>Scroll ↓</p>
-        <div className={styles.graphicContainer}>
-          <div className={styles.scroller}>
+      <Div>
+        <Div className={styles.graphicContainer}>
+          <Div className={styles.graphic}>
+            <img src={active.background} alt={active.alt} />
+          </Div>
+          <Div className={styles.scroller}>
             {steps.map(value => {
               return (
-                <div
+                <Div
                   className={styles.step} data={value} key={value}
-                  style={{ background: 'white' }}
                 >
-                  <p>{content[value].text}</p>
-                </div>
+                  {content[value].child}
+                </Div>
               );
             })}
-          </div>
-          <div
-            className={styles.graphic}
-            style={{backgroundImage: 'url(' + backgroundImage + ')'}} 
-          ></div>
-        </div>
-      </div>
+          </Div>
+        </Div>
+      </Div>
     );
   }
 }
