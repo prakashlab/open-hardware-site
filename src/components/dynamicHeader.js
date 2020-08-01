@@ -4,18 +4,26 @@ import { Block } from "@reflexjs/gatsby-theme-block"
 
 export default class DynamicHeader extends PureComponent {
   state = {
-    top: true
+    alpha: 0.0
   };
 
   componentDidMount() {
     document.addEventListener("scroll", () => {
-      this.setState({top: window.scrollY < 200});
+      const transitionStart = 200;
+      const transitionEnd = window.innerHeight / 2;
+      const startAlpha = 0;
+      const endAlpha = 0.9;
+      this.setState({
+        alpha: Math.min(endAlpha, Math.max(
+          startAlpha, window.scrollY - transitionStart
+        ) / transitionEnd)
+      });
     });
   }
 
   render() {
-    const { top } = this.state;
-    const background = top ? "transparent" : "background";
+    const { alpha } = this.state;
+    const background = `rgba(25, 25, 36, ${alpha})`;
     return (
       <Div position="relative">
         <Block
