@@ -14,7 +14,7 @@ const content = {
       </Container>
     ),
     background: "1.jpg",
-    alt: "A parrot"
+    alt: "A fox"
   },
   1: {
     child: (
@@ -96,7 +96,7 @@ const content = {
       </Container>
     ),
     background: "8.jpg",
-    alt: "A fox"
+    alt: "A parrot"
   },
 }
 

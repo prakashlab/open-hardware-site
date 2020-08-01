@@ -4,11 +4,12 @@ import { Metatags } from "@reflexjs/gatsby-plugin-metatags"
 import Loadable from "@loadable/component"
 
 const LoadableScrollytelling = Loadable(() => import("../components/scrollytelling"))
+const LoadableDynamicHeader = Loadable(() => import("../components/dynamicHeader"))
 
 const ScrollyPage = ({ data }) => (
   <React.Fragment>
     <Metatags pathname="/notion" />
-    <Block src="header" />
+    <LoadableDynamicHeader />
     <LoadableScrollytelling />
     <Block src="footer" />
   </React.Fragment>
