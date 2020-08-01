@@ -1,10 +1,10 @@
-import React, { PureComponent } from "react";
-import { Container, Div, Grid, H1, P } from "@reflexjs/components"
+import React from "react";
+import { Container, Div, Grid, H1, P, Section } from "@reflexjs/components"
 import { Block } from "@reflexjs/gatsby-theme-block"
 import { Image } from "@reflexjs/gatsby-plugin-image";
 import styles from "./scrollytelling.module.css";
 
-const content = {
+const sections = {
   0: {
     child: (
       <Container px="3rem" py="3rem" bg="background">
@@ -13,7 +13,7 @@ const content = {
         <Image src="default.jpg" />
       </Container>
     ),
-    background: "1.jpg",
+    background: "scrollytelling/1.jpg",
     alt: "A fox"
   },
   1: {
@@ -27,7 +27,7 @@ const content = {
         </Grid>
       </Container>
     ),
-    background: "2.jpg",
+    background: "scrollytelling/2.jpg",
     alt: "A leopard"
   },
   2: {
@@ -42,7 +42,7 @@ const content = {
         </Grid>
       </Container>
     ),
-    background: "3.jpg",
+    background: "scrollytelling/3.jpg",
     alt: "Some sheep"
   },
   3: {
@@ -55,27 +55,27 @@ const content = {
         />
       </Container>
     ),
-    background: "4.jpg",
+    background: "scrollytelling/4.jpg",
     alt: "Some horses"
   },
   4: {
     child: (
-      <Container px="3rem" py="3rem" bg="background">
+      <Div>
         <H1>Fifth</H1>
         <P>This is the fifth box!</P>
-      </Container>
+      </Div>
     ),
-    background: "5.jpg",
+    background: "scrollytelling/5.jpg",
     alt: "Some zebras"
   },
   5: {
     child: (
-      <Container px="3rem" py="3rem" bg="background">
+      <Div px="3rem" py="3rem" bg="background">
         <H1>Sixth</H1>
         <P>This is the sixth box!</P>
-      </Container>
+      </Div>
     ),
-    background: "6.jpg",
+    background: "scrollytelling/6.jpg",
     alt: "A giraffe"
   },
   6: {
@@ -85,75 +85,40 @@ const content = {
         <P>This is the seventh box!</P>
       </Container>
     ),
-    background: "7.jpg",
+    background: "scrollytelling/7.jpg",
     alt: "A fox"
   },
   7: {
     child: (
-      <Container px="3rem" py="3rem" bg="background">
-        <H1>Eighth</H1>
-        <P>This is the eighth box!</P>
-      </Container>
+      <Div px="3rem" py="3rem">
+        <Grid col="1|1|2">
+          <Div></Div>
+          <Div px="3rem" py="3rem" bg="background">
+            <H1>Eighth</H1>
+            <P>Far right Column!</P>
+          </Div>
+        </Grid>
+      </Div>
     ),
-    background: "8.jpg",
+    background: "scrollytelling/8.jpg",
     alt: "A parrot"
   },
 }
 
-export default class Scrollytelling extends PureComponent {
-  state = {
-    data: 0,
-    steps: Object.keys(content)
-  };
-
-  componentDidMount() {
-    require('intersection-observer');
-    const scrollama = require('scrollama');
-    const scroller = scrollama();
-    scroller.setup({
-      step: '.' + styles.step,
-      offset: 0.5,
-      // debug: true
-    });
-    scroller.onStepEnter(this.onStepEnter);
-    scroller.onStepExit(this.onStepExit);
-    window.addEventListener('resize', scroller.resize);
-  }
-
-  onStepEnter = ({ index, direction }) => {
-    console.log('enter', index)
-    this.setState({ data: index });
-  };
-
-  onStepExit = ({ index, direction }) => {
-    if (direction === 'up' && index === this.state.steps[0]) {
-      this.setState({ data: 0 });
-    }
-  };
-
-  render() {
-    const { data, steps } = this.state;
-
-    const active = data === undefined ? content[0] : content[data];
-    return (
-      <Div>
-        <Div className={styles.graphicContainer}>
-          <Div className={styles.graphic}>
-            <img src={active.background} alt={active.alt} />
+const Scrollytelling = () => (
+  <React.Fragment>
+    {Object.entries(sections).map(([key, value]) => {
+      return (
+        <Section key={key}>
+          <Image className={styles.graphic} src={value.background} alt={value.alt}
+          />
+          <Div className={styles.content}>
+            {value.child}
           </Div>
-          <Div className={styles.scroller}>
-            {steps.map(value => {
-              return (
-                <Div
-                  className={styles.step} data={value} key={value}
-                >
-                  {content[value].child}
-                </Div>
-              );
-            })}
-          </Div>
-        </Div>
-      </Div>
-    );
-  }
-}
+        </Section>
+      );
+    })}
+  </React.Fragment>
+);
+
+export default Scrollytelling;
