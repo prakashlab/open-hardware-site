@@ -1563,24 +1563,24 @@
     gatsby-source-filesystem "^2.3.8"
     gatsby-transformer-sharp "^2.5.9"
 
-"@reflexjs/gatsby-plugin-metatags@^0.1.7":
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/@reflexjs/gatsby-plugin-metatags/-/gatsby-plugin-metatags-0.1.7.tgz#ece17ef6951e7b2a8813865b54ba96e1289579a2"
-  integrity sha512-GA8jNCCSe0Kgjb5g3yvB9FYgmUxSHIWO7aoU6s1nQrR7sq+QTXy2m1+rTHKFEl90LICJRGCmEiHjV8pYjo0kZA==
+"@reflexjs/gatsby-plugin-metatags@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@reflexjs/gatsby-plugin-metatags/-/gatsby-plugin-metatags-0.2.0.tgz#5d3714167ef9e9de4e2c3e6f837d685c25a13dc1"
+  integrity sha512-qOdfJiFa8T57T5LPp36SFFetdno2B7BHTBEIs+i9ccuPdl7Xbt08jzE5+iu1bZ7TNpM3KoyjKRMbnRjpkV8Udw==
   dependencies:
     "@reflexjs/gatsby-plugin-image" "^0.2.2"
     "@reflexjs/utils" "^0.2.1"
     gatsby-plugin-react-helmet "^3.3.6"
     react-helmet "^6.1.0"
 
-"@reflexjs/gatsby-theme-base@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@reflexjs/gatsby-theme-base/-/gatsby-theme-base-0.3.0.tgz#739cd74995de410f348e475d8706d89dfeba36d2"
-  integrity sha512-ZIc3avic5Vie4fnK13a7qvErxKcWv/hYiFJMgSRAY+/VAlP+kQzaSbCJOYyh07ksvwL/NWvjZMr7Ok8hpr/Y1w==
+"@reflexjs/gatsby-theme-base@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@reflexjs/gatsby-theme-base/-/gatsby-theme-base-0.3.1.tgz#7a914bf39252c5cd9f98e0347942c80506485a00"
+  integrity sha512-fd038Rhb/+kU99/P1IVLRKYz986qG0JhzrkBksMtBTzshpaupZk3pol0XMjMeTLOieyojSSCu6vJyatL7GDA/w==
   dependencies:
     "@reflexjs/components" "^0.1.8"
     "@reflexjs/gatsby-plugin-image" "^0.2.2"
-    "@reflexjs/gatsby-plugin-metatags" "^0.1.7"
+    "@reflexjs/gatsby-plugin-metatags" "^0.2.0"
     "@reflexjs/gatsby-theme-block" "^0.3.0"
     "@reflexjs/gatsby-theme-core" "^0.4.0"
     "@reflexjs/gatsby-theme-nav" "^0.3.0"
@@ -1621,10 +1621,10 @@
     gatsby-transformer-sharp "^2.5.3"
     theme-ui "^0.3.1"
 
-"@reflexjs/gatsby-theme-doc@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@reflexjs/gatsby-theme-doc/-/gatsby-theme-doc-0.3.0.tgz#8f644e98b43df94c2b5a3d8e6472f66624e62ad0"
-  integrity sha512-i3sGIdMLv5lVq/Sv8qQzQRwFVol/v9yugZe+bgy8raq5yWLtovZ7mPYWha2XncR5HA4ve13H8h3b2DHrgVSQxw==
+"@reflexjs/gatsby-theme-doc@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@reflexjs/gatsby-theme-doc/-/gatsby-theme-doc-0.3.1.tgz#8fccccef5a6da4cacd7080785eebf706879a96b2"
+  integrity sha512-EZBXw+pD3fQRwij+aTMaZg9Z91yTiXs6AlA2qkUqt+LGyb6AtT002j/d6Bb4kLe3crFGtsSBwTb5BaMlN954lA==
   dependencies:
     "@reflexjs/components" "^0.1.8"
     "@reflexjs/gatsby-helpers" "^0.5.0"
@@ -1645,10 +1645,10 @@
     "@reflexjs/utils" "^0.2.1"
     gatsby-source-filesystem "^2.3.8"
 
-"@reflexjs/gatsby-theme-post@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@reflexjs/gatsby-theme-post/-/gatsby-theme-post-0.4.0.tgz#cebfad55c338194068462b616f5b760e4c5ed4cb"
-  integrity sha512-yu0EHuKv+EtoJEabWuyPkFisIQk4VNsmpNcIQ8p1GfuKFqxDcQVnaTDh3zg+twd5z5GudOWfDyW+Zyz0hxFkBQ==
+"@reflexjs/gatsby-theme-post@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@reflexjs/gatsby-theme-post/-/gatsby-theme-post-0.5.0.tgz#d024ee78686078e41310ad59532f7d394e2e73b8"
+  integrity sha512-QMAWkLwTO4CqhBUddO/p5wXT69Sa+qaKdBDxP5R+JiJ0odCqeP04G7Qv/Wk0lyPNyfYrp3yS87XEAR7607r/ew==
   dependencies:
     "@reflexjs/components" "^0.1.8"
     "@reflexjs/gatsby-helpers" "^0.5.0"

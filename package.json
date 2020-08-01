@@ -16,10 +16,10 @@
   "dependencies": {
     "@loadable/component": "^5.13.1",
     "@reflexjs/components": "^0.1.8",
-    "@reflexjs/gatsby-theme-base": "^0.3.0",
+    "@reflexjs/gatsby-theme-base": "^0.3.1",
     "@reflexjs/gatsby-theme-block": "^0.3.0",
-    "@reflexjs/gatsby-theme-doc": "^0.3.0",
-    "@reflexjs/gatsby-theme-post": "^0.4.0",
+    "@reflexjs/gatsby-theme-doc": "^0.3.1",
+    "@reflexjs/gatsby-theme-post": "^0.5.0",
     "@reflexjs/gatsby-theme-styleguide": "^0.2.0",
     "@reflexjs/preset-base": "^0.2.4",
     "@reflexjs/preset-flex": "^0.1.9",
