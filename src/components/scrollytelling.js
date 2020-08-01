@@ -110,7 +110,8 @@ const Scrollytelling = () => (
     {Object.entries(sections).map(([key, value]) => {
       return (
         <Section key={key}>
-          <Image className={styles.graphic} src={value.background} alt={value.alt}
+          <Image
+            className={styles.graphic} src={value.background} alt={value.alt}
           />
           <Div className={styles.content}>
             {value.child}
