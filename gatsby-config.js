@@ -9,13 +9,41 @@ module.exports = {
   pathPrefix: "/open-hardware-site",
   plugins: [
     `@reflexjs/gatsby-theme-base`,
-    `@reflexjs/gatsby-theme-doc`,
+    {
+      resolve: `@reflexjs/gatsby-theme-doc`,
+      options: {
+        basePath: "gallery",
+        contentPath: "content/gallery"
+      }
+    },
     {
       resolve: `@reflexjs/gatsby-plugin-metatags`,
       options: {
+        global: {
+          title: `Open Hardware Site`,
+          description: `A starter template for open hardware project websites.`
+        },
         types: [
-          `Page`,
-          `Post`
+          `MdxPage`,
+          `MdxPost`,
+          `MdxDoc`,
+          `MdxStyleguide`
+        ],
+        paths: [
+          {
+            pathname: `/updates{,/}`,
+            defaults: {
+              title: `Project Updates`,
+              description: `News and updates about the project.`,
+            },
+          },
+          {
+            pathname: `/notion{,/**}`,
+            defaults: {
+              title: `Documentation`,
+              description: `Technical documentation about the project.`,
+            },
+          },
         ],
         debug: false
       }
@@ -43,6 +71,7 @@ module.exports = {
         path: `${__dirname}/src/pages`
       }
     },
-    `gatsby-plugin-react-helmet`
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`
   ],
 }

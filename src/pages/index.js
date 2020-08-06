@@ -8,7 +8,7 @@ const LoadableDynamicHeader = Loadable(() => import("../components/dynamicHeader
 
 const ScrollyPage = ({ data }) => (
   <React.Fragment>
-    <Metatags pathname="/notion" />
+    <Metatags pathname="/" />
     <LoadableDynamicHeader />
     <Scrollytelling />
     <Block src="footer" />
