@@ -2,16 +2,16 @@ import { withPrefix } from "gatsby"
 
 export const Card = ({ href, image, name }) => (
   <Div width="80vw|20vw|12vw" textAlign="center">
-    <Link href={withPrefix(href)}>
+    <A href={withPrefix(href)}>
       <Image
         src={image}
         alt={name}
         width="80vw|20vw|12vw"
         height="80vw|20vw|12vw"
       />
-    </Link>
+    </A>
     <P>
-      <Link href={withPrefix(href)}>{name}</Link>
+      <A href={withPrefix(href)}>{name}</A>
     </P>
   </Div>
 )
