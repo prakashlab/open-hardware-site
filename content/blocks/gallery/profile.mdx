@@ -1,0 +1,16 @@
+export const Profile = ({ image, imageAlt, video }) => (
+  <Grid col="1|1|2" gap="4|6|8" mt="4|6|8">
+    <Div>
+      <Image
+        src={image}
+        alt={imageAlt}
+      />
+    </Div>
+    <Div>
+      <Block
+        src="gallery/video"
+        url={video}
+      />
+    </Div>
+  </Grid>
+)
