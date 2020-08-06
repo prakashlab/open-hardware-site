@@ -5,7 +5,7 @@ import {
   ThemeProvider,
   Icon,
 } from "@reflexjs/gatsby-theme-core"
-import { Link } from "gatsby"
+import { Link, withPrefix } from "gatsby"
 import {
   H1,
   Container,
@@ -91,7 +91,7 @@ export const Doc = ({ title, excerpt, body, previousDoc, nextDoc }) => {
               {body && <MDXRenderer>{body}</MDXRenderer>}
               <Flexbox justifyContent="space-between" mt="10">
                 {previousDoc && (
-                  <Button as={Link} variant="link" href={"/" + previousDoc.slug}>
+                  <Button as={Link} variant="link" href={withPrefix(previousDoc.slug)}>
                     <Icon name="arrow-left" mr="2" />
                     {previousDoc.title}
                   </Button>
@@ -101,7 +101,7 @@ export const Doc = ({ title, excerpt, body, previousDoc, nextDoc }) => {
                     as={Link}
                     variant="primary"
                     ml="auto"
-                    href={"/" + nextDoc.slug}
+                    href={withPrefix(nextDoc.slug)}
                   >
                     {nextDoc.title}
                     <Icon name="arrow-right" ml="2" />

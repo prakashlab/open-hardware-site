@@ -1,3 +1,5 @@
+import { withPrefix } from "gatsby"
+
 export const BlockLink = ({ heading, text, url, links, ...props }) => (
   <Div
     borderWidth="1px"
@@ -35,7 +37,7 @@ export const BlockLink = ({ heading, text, url, links, ...props }) => (
       <Flexbox flexDirection="column" alignItems="flex-start">
         {links.map((link) => (
           <A
-            href={link.url}
+            href={withPrefix(link.url)}
             px="4"
             py="2"
             fontSize="md"
