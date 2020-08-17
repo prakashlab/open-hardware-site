@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: "Open Hardware Site",
     description: "Starter for open hardware project sites.",
-    siteUrl: process.env.SITE_URL || "https://ethanjli.github.io",
+    siteUrl: process.env.SITE_URL || "https://prakashlab.github.io",
   },
   pathPrefix: "/open-hardware-site",
   plugins: [
